@@ -119,5 +119,7 @@ dependencies {
     implementation "com.google.android.gms:play-services-location:$playServicesVersion"
     implementation "com.google.android.gms:play-services-maps:$playServicesVersion"
 
+    //Firebase
+    implementation 'com.firebaseui:firebase-ui-auth:6.2.0'
 
 }
