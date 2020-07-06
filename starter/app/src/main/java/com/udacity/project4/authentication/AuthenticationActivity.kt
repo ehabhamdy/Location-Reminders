@@ -52,6 +52,7 @@ class AuthenticationActivity : AppCompatActivity() {
                     Log.i(TAG, "navigate to reminder list")
                     val intent = Intent(this, RemindersActivity::class.java)
                     startActivity(intent)
+                    finish()
                 }
                 else -> Log.e(
                     TAG,
