@@ -8,6 +8,7 @@ import androidx.databinding.DataBindingUtil
 import com.udacity.project4.R
 import com.udacity.project4.databinding.ActivityReminderDescriptionBinding
 import com.udacity.project4.locationreminders.reminderslist.ReminderDataItem
+import java.io.Serializable
 
 /**
  * Activity that displays the reminder details after the user clicks on the notification
@@ -33,5 +34,15 @@ class ReminderDescriptionActivity : AppCompatActivity() {
             R.layout.activity_reminder_description
         )
 //        TODO: Add the implementation of the reminder details
+
+        var reminderDataItem = intent.getSerializableExtra(EXTRA_ReminderDataItem) as? ReminderDataItem
+
+        binding.titleTextview.text = reminderDataItem?.title ?: ""
+        binding.descriptionTextview.text = reminderDataItem?.description ?: ""
+        binding.locationTextview.text = reminderDataItem?.location ?: ""
+        binding.latitudeTextview.text = (reminderDataItem?.latitude ?: "").toString()
+        binding.longitudeTextview.text = (reminderDataItem?.longitude ?: "").toString()
+
+
     }
 }
